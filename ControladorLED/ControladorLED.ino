@@ -21,12 +21,12 @@ void loop() {
   // Si el valor deseado es mayor que el valor real, aumentamos el ancho del PWM
   if(voltaje > salida) {
     pwmValue = pwmValue + 1;
-    pwmValue = constrain(pwmValue, 1, 100);
+    pwmValue = constrain(pwmValue, 2, 255);
     }
   // Si el valor deseado es menor que el valor real, disminuimos el ancho del PWM
   if(voltaje < salida) {
     pwmValue = pwmValue - 1;
-    pwmValue = constrain(pwmValue, 1, 100);
+    pwmValue = constrain(pwmValue, 2, 255);
     }
 
   analogWrite(PWM, pwmValue); // Creamos la señal del PWM
